@@ -1,0 +1,28 @@
+.settings {
+  background-color: #dad7d7;
+  padding: 5px;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 2px;
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.gear {
+  height: 35px;
+  width: 35px;
+  font-size: 35px;
+}
+.gear:hover {
+  animation-name: gear;
+  animation-duration: 0.5s;
+}
+@keyframes gear {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(43deg);
+  }
+}

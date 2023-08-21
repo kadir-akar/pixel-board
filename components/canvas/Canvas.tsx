@@ -1,30 +1,29 @@
-import { useEffect } from "react";
-import { Square } from "../square/Square";
-
+import { useState } from "react";
 import "./canvas.css";
-const Canvas = () => {
-  useEffect(() => {
-    const canvas = document.querySelector(".canvas");
-    if (canvas) {
-      for (let i = 0; i < 32; i++) {
-        const row = document.createElement("div");
-        row.classList.add("row");
-        for (let j = 0; j < 32; j++) {
-          const square = document.createElement("div");
-          square.classList.add("square");
-          square.addEventListener("click", (e) => {
-            const target = e.target as HTMLDivElement;
-            target.style.backgroundColor = "black";
-          });
-          row.appendChild(square);
-        }
-        canvas.appendChild(row);
-      }
-    }
-  });
+import { Square } from "./square/Square";
+type propsType = {
+  color: string;
+};
+
+const Canvas = ({ color }: propsType) => {
+  const [canvasSize, setCanvasSize] = useState<number>(32);
   return (
     <div>
-      <div className="canvas"></div>
+      <div className="canvas">
+        {Array(canvasSize)
+          .fill(0)
+          .map((_, i) => {
+            return (
+              <div className="row" key={i}>
+                {Array(canvasSize)
+                  .fill(0)
+                  .map((_, j) => {
+                    return <Square color={color} key={j} />;
+                  })}
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };
