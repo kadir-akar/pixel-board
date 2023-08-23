@@ -3,10 +3,10 @@ import "./canvas.css";
 import { Square } from "./square/Square";
 type propsType = {
   color: string;
+  canvasSize: number;
 };
 
-const Canvas = ({ color }: propsType) => {
-  const [canvasSize, setCanvasSize] = useState<number>(32);
+const Canvas = ({ color, canvasSize }: propsType) => {
   return (
     <div>
       <div className="canvas">

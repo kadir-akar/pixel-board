@@ -15,3 +15,11 @@ button {
   background-color: #1f1f1f;
   color: aliceblue;
 }
+.center {
+  text-align: center;
+}
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  margin-right: 3px;
+}

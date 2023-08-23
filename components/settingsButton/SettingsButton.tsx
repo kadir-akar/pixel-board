@@ -5,19 +5,25 @@ import { IoIosSettings } from "react-icons/io";
 
 type propsType = {
   colorValue: (color: string) => void;
+  setCanvasSize: (size: number) => void;
 };
 
-const SettingsButton = ({ colorValue }: propsType) => {
-  const [settings, openSettings] = useState(false);
+const SettingsButton = ({ colorValue, setCanvasSize }: propsType) => {
+  const [settings, openSettings] = useState(true);
   const setSettings = () => {
     openSettings(!settings);
   };
+
   return (
     <div className="settings">
-      <div className="gear" onClick={setSettings}>
+      <div className="tool gear" onClick={setSettings}>
         <IoIosSettings />
       </div>
-      {settings ? <Settings colorValue={colorValue} /> : null}
+      <span className="tool-number">1</span>
+      {/* <h3 className="tool-number center">1</h3> */}
+      {settings ? (
+        <Settings colorValue={colorValue} setCanvasSize={setCanvasSize} />
+      ) : null}
     </div>
   );
 };

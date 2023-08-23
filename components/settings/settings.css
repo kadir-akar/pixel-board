@@ -1,24 +1,30 @@
 .settingsMenu {
-  border-top: 1px solid black;
-  margin-top: 4px;
-  background-color: #dad7d7;
-  padding: 15px 15px 15px 5px;
+  background-color: #dddbdb;
+  padding: 10px 15px 15px 5px;
   width: 190px;
-  margin-left: -5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(2, 3, 2);
+  z-index: 1;
+  text-align: left;
 }
 .custom {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-input[type="checkbox"] {
-  width: 17px;
-  height: 17px;
-  margin-right: 3px;
+
+.option-header {
+  margin-bottom: 5px;
+  padding-bottom: 3px;
+  font-weight: bold;
+  font-size: 17px;
+  border-bottom: 1px solid rgb(170, 167, 167);
+  color: rgb(2, 3, 2);
 }
