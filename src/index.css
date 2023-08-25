@@ -14,6 +14,7 @@ button {
   border-radius: 5px;
   background-color: #1f1f1f;
   color: aliceblue;
+  cursor: pointer;
 }
 .center {
   text-align: center;
@@ -22,4 +23,14 @@ input[type="checkbox"] {
   width: 17px;
   height: 17px;
   margin-right: 3px;
+}
+input[type="color"] {
+  width: 70px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.active-tool {
+  color: crimson;
 }

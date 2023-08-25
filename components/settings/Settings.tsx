@@ -1,5 +1,4 @@
 import "./settings.css";
-type ColorChangeEvent = React.ChangeEvent<HTMLInputElement>;
 type propsType = {
   colorValue: (color: string) => void;
   setCanvasSize: (size: number) => void;
@@ -12,10 +11,9 @@ const Settings = ({ colorValue, setCanvasSize }: propsType) => {
   const canvasSize = (size: number) => {
     setCanvasSize(size);
     const sizeCheckBoxes = document.querySelectorAll(".size-checkbox");
-    sizeCheckBoxes.forEach((checkbox) => {
-      // checkbox.checked = true;
-    });
+    sizeCheckBoxes.forEach((checkbox) => {});
   };
+
   return (
     <div>
       <div className="settingsMenu">
@@ -70,19 +68,29 @@ const Settings = ({ colorValue, setCanvasSize }: propsType) => {
             <span>solid</span>
           </div>
         </div>
+        <h3 className="option-header">Select Color</h3>
+        <input
+          type="color"
+          className="color-picker"
+          onBlur={(e) => {
+            if (e.target instanceof HTMLInputElement) {
+              changeBrushColor(e.target.value);
+            }
+          }}
+        />
         <div className="settingsMenuOption">
-          <h3 className="option-header">Select Color</h3>
-          <input
-            type="color"
-            onBlur={(e) => {
-              if (e.target instanceof HTMLInputElement) {
-                changeBrushColor(e.target.value);
-              }
+          <button
+            onClick={() => {
+              const canvas = document.querySelectorAll(
+                ".square"
+              ) as NodeListOf<HTMLCanvasElement>;
+              canvas.forEach((canvas) => {
+                canvas.style.backgroundColor = "#dad7d7";
+              });
             }}
-          />
-        </div>
-        <div className="settingsMenuOption">
-          <button>Clear</button>
+          >
+            Clear
+          </button>
         </div>
         <div className="settingsMenuOption">
           <button>Random Color</button>
