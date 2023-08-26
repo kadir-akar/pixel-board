@@ -1,6 +1,7 @@
-import { Canvas } from "../components/canvas/Canvas.tsx";
-import { Tools } from "../components/tools/Tools.tsx";
+import { Canvas } from "./components/canvas/Canvas.tsx";
+import { Tools } from "./components/tools/Tools.tsx";
 import { useState } from "react";
+
 const App = () => {
   const [color, setColor] = useState<string>("#000000");
   const [canvasSize, setCanvasSize] = useState<number>(32);

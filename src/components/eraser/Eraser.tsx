@@ -27,9 +27,9 @@ const Eraser = ({ setColorValue }: propsType) => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "3") {
         erased();
+        removeActiveTool();
         activeTool();
       }
-      removeActiveTool();
     };
     window.addEventListener("keydown", handleKeyPress);
     return () => {

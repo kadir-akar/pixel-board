@@ -15,39 +15,27 @@ const Pencil = ({ setColorValue }: propsType) => {
     const eraser = document.querySelector(".eraser");
     eraser?.classList.remove("active-tool");
   };
-  const [toggle, setToggle] = useState(false);
   const togglePencil = () => {
-    setToggle(!toggle);
     activeTool();
     removeActiveTool();
   };
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "2") {
-        setToggle(!toggle);
-        activeTool();
-        1;
-        removeActiveTool();
+        togglePencil();
       }
     };
     window.addEventListener("keydown", handleKeyPress);
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [toggle]);
+  }, [togglePencil]);
   return (
     <div>
       <div className="tool pencil">
         <BiSolidPencil onClick={togglePencil} />
       </div>
       <span className="tool-number">2</span>
-      {toggle ? (
-        <div className="pencil-options">
-          <div className="pencil-option">
-            <input type="color" />
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 };
