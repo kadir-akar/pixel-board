@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./canvas.css";
 import { Square } from "./square/Square";
-type propsType = {
-  color: string;
-  canvasSize: number;
-};
 
-const Canvas = ({ color, canvasSize }: propsType) => {
+import { useCanvasContext } from "../../context/CanvasContext";
+
+const Canvas = () => {
+  const { canvasSize, color } = useCanvasContext();
+
   return (
     <div>
       <div className="canvas">

@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { BsFillEraserFill } from "react-icons/bs";
+import { useCanvasContext } from "../../context/CanvasContext";
 
-type propsType = {
-  setColorValue: (color: string) => void;
-};
-
-const Eraser = ({ setColorValue }: propsType) => {
+const Eraser = () => {
+  const { dispatch } = useCanvasContext();
   const activeTool = () => {
     const eraser = document.querySelector(".eraser");
     eraser?.classList.add("active-tool");
@@ -15,7 +13,7 @@ const Eraser = ({ setColorValue }: propsType) => {
     pencil?.classList.remove("active-tool");
   };
   const erased = () => {
-    setColorValue("#dad7d7");
+    dispatch({ type: "SET_COLOR", payload: "#dad7d7" });
   };
   const toggleEraser = () => {
     erased();

@@ -1,16 +1,14 @@
-import { Canvas } from "./components/canvas/Canvas.tsx";
-import { Tools } from "./components/tools/Tools.tsx";
-import { useState } from "react";
+import { Canvas } from "./components/canvas/Canvas.js";
+import { Tools } from "./components/tools/Tools.js";
+
+import CanvasContext from "./context/CanvasContext.js";
 
 const App = () => {
-  const [color, setColor] = useState<string>("#000000");
-  const [canvasSize, setCanvasSize] = useState<number>(32);
-
   return (
-    <div>
-      <Canvas color={color} canvasSize={canvasSize} />
-      <Tools setCanvasSize={setCanvasSize} setColor={setColor} />
-    </div>
+    <CanvasContext>
+      <Tools />
+      <Canvas />
+    </CanvasContext>
   );
 };
 

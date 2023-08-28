@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { SettingsButton } from "../settingsButton/SettingsButton";
 import { Pencil } from "../pencil/Pencil";
 import { Eraser } from "../eraser/Eraser";
 import "./tools.css";
 
-type propsType = {
-  setCanvasSize: (size: number) => void;
-  setColor: (color: string) => void;
-};
-const Tools = ({ setCanvasSize, setColor }: propsType) => {
+import { useCanvasContext } from "../../context/CanvasContext";
+const Tools = () => {
+  const { dispatch } = useCanvasContext();
+  //reducer lazım
+  const setColor = (color: string) => {
+    dispatch({ type: "SET_COLOR", payload: color });
+  };
+
   return (
     <div>
       <div className="tools">
-        <SettingsButton
-          setColorValue={setColor}
-          setCanvasSize={setCanvasSize}
-        />
+        <SettingsButton />
         <Pencil setColorValue={setColor} />
-        <Eraser setColorValue={setColor} />
+        <Eraser />
       </div>
     </div>
   );

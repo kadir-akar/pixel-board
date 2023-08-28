@@ -3,16 +3,12 @@ import "./settingsButton.css";
 import { Settings } from "../settings/Settings";
 import { IoIosSettings } from "react-icons/io";
 
-type propsType = {
-  setColorValue: (color: string) => void;
-  setCanvasSize: (size: number) => void;
-};
-
-const SettingsButton = ({ setColorValue, setCanvasSize }: propsType) => {
+const SettingsButton = () => {
   const [settings, openSettings] = useState(true);
   const setSettings = () => {
     openSettings(!settings);
   };
+
   useEffect(() => {
     if (settings) {
       const gear = document.querySelector(".gear");
@@ -39,9 +35,7 @@ const SettingsButton = ({ setColorValue, setCanvasSize }: propsType) => {
         <IoIosSettings />
       </div>
       <span className="tool-number">1</span>
-      {settings ? (
-        <Settings colorValue={setColorValue} setCanvasSize={setCanvasSize} />
-      ) : null}
+      {settings ? <Settings /> : null}
     </div>
   );
 };

@@ -1,19 +1,27 @@
 import "./settings.css";
-type propsType = {
-  colorValue: (color: string) => void;
-  setCanvasSize: (size: number) => void;
-};
+import { useCanvasContext } from "../../context/CanvasContext";
 
-const Settings = ({ colorValue, setCanvasSize }: propsType) => {
+const Settings = () => {
+  const { canvasSize, dispatch } = useCanvasContext();
   const changeBrushColor = (color: string) => {
-    colorValue(color);
+    dispatch({ type: "SET_COLOR", payload: color });
   };
-  const canvasSize = (size: number) => {
-    setCanvasSize(size);
-    const sizeCheckBoxes = document.querySelectorAll(".size-checkbox");
-    sizeCheckBoxes.forEach((checkbox) => {});
+  // const canvasSize = (size: number) => {
+  //   setCanvasSize(size);
+  //   const sizeCheckBoxes = document.querySelectorAll(".size-checkbox");
+  //   sizeCheckBoxes.forEach((checkbox) => {});
+  // };
+  const clearCanvas = () => {
+    const canvas = document.querySelectorAll(
+      ".square"
+    ) as NodeListOf<HTMLCanvasElement>;
+    canvas.forEach((canvas) => {
+      canvas.style.backgroundColor = "#dad7d7";
+    });
   };
-
+  const changeCanvasSize = (size: number) => {
+    dispatch({ type: "SET_CANVAS_SIZE", payload: size });
+  };
   return (
     <div>
       <div className="settingsMenu">
@@ -23,9 +31,9 @@ const Settings = ({ colorValue, setCanvasSize }: propsType) => {
             <input
               type="checkbox"
               className="size-checkbox"
-              id="8"
+              id="16"
               onChange={() => {
-                canvasSize(16);
+                changeCanvasSize(16);
               }}
             />
             <span>16x16</span>
@@ -34,9 +42,9 @@ const Settings = ({ colorValue, setCanvasSize }: propsType) => {
             <input
               type="checkbox"
               className="size-checkbox"
-              id="16"
+              id="32"
               onChange={() => {
-                canvasSize(32);
+                changeCanvasSize(32);
               }}
             />
             <span>32x32</span>
@@ -45,9 +53,9 @@ const Settings = ({ colorValue, setCanvasSize }: propsType) => {
             <input
               type="checkbox"
               className="size-checkbox"
-              id="32"
+              id="64"
               onChange={() => {
-                canvasSize(64);
+                changeCanvasSize(64);
               }}
             />
             <span>64x64</span>
@@ -79,18 +87,7 @@ const Settings = ({ colorValue, setCanvasSize }: propsType) => {
           }}
         />
         <div className="settingsMenuOption">
-          <button
-            onClick={() => {
-              const canvas = document.querySelectorAll(
-                ".square"
-              ) as NodeListOf<HTMLCanvasElement>;
-              canvas.forEach((canvas) => {
-                canvas.style.backgroundColor = "#dad7d7";
-              });
-            }}
-          >
-            Clear
-          </button>
+          <button onClick={clearCanvas}>Clear</button>
         </div>
         <div className="settingsMenuOption">
           <button>Random Color</button>
