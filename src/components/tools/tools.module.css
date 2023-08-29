@@ -4,7 +4,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 55px;
   box-shadow: 0 0 10px 0 rgba(236, 232, 232, 0.5);
   background-color: white;
   align-items: center;
@@ -15,8 +14,19 @@
   flex-direction: column;
   display: flex;
   flex: 1;
-  font-size: 32px;
+  font-size: 30px;
   text-align: center;
+}
+.tools > *:not(:last-child) {
+  border-right: 1px solid #585858;
+}
+.tools span {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #a0a0a0;
+  font-weight: 600;
+  border-top: 1px solid #585858;
 }
 .tool {
   height: 35px;

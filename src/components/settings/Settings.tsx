@@ -1,8 +1,8 @@
-import "./settings.css";
+import styles from "./settings.module.css";
 import { useCanvasContext } from "../../context/CanvasContext";
 
 const Settings = () => {
-  const { canvasSize, dispatch } = useCanvasContext();
+  const { dispatch } = useCanvasContext();
   const changeBrushColor = (color: string) => {
     dispatch({ type: "SET_COLOR", payload: color });
   };
@@ -24,13 +24,13 @@ const Settings = () => {
   };
   return (
     <div>
-      <div className="settingsMenu">
-        <form className="settingsMenuOption custom">
+      <div className={styles.settingsMenu}>
+        <form className={(styles.settingsMenuOption, styles.canvasSize)}>
           <div>
-            <h3 className="option-header">Canvas Size</h3>
+            <h3 className={styles["option-header"]}>Canvas Size</h3>
             <input
               type="checkbox"
-              className="size-checkbox"
+              className={styles["size-checkbox"]}
               id="16"
               onChange={() => {
                 changeCanvasSize(16);
@@ -41,7 +41,7 @@ const Settings = () => {
           <div>
             <input
               type="checkbox"
-              className="size-checkbox"
+              className={styles["size-checkbox"]}
               id="32"
               onChange={() => {
                 changeCanvasSize(32);
@@ -52,7 +52,7 @@ const Settings = () => {
           <div>
             <input
               type="checkbox"
-              className="size-checkbox"
+              className={styles["size-checkbox"]}
               id="64"
               onChange={() => {
                 changeCanvasSize(64);
@@ -61,22 +61,22 @@ const Settings = () => {
             <span>64x64</span>
           </div>
         </form>
-        <div className="settingsMenuOption ">
-          <h3 className="option-header">Border settings</h3>
-          <div className="border-option">
+        <div className={styles.settingsMenuOption}>
+          <h3 className={styles["option-header"]}>Border settings</h3>
+          <div className={styles["border-option"]}>
             <input type="checkbox" />
             <span>none</span>
           </div>
-          <div className="border-option">
+          <div className={styles["border-option"]}>
             <input type="checkbox" />
             <span>dot</span>
           </div>
-          <div className="border-option">
+          <div className={styles["border-option"]}>
             <input type="checkbox" />
             <span>solid</span>
           </div>
         </div>
-        <h3 className="option-header">Select Color</h3>
+        <h3 className={styles["option-header"]}>Select Color</h3>
         <input
           type="color"
           className="color-picker"
@@ -86,10 +86,10 @@ const Settings = () => {
             }
           }}
         />
-        <div className="settingsMenuOption">
+        <div className={styles.settingsMenuOption}>
           <button onClick={clearCanvas}>Clear</button>
         </div>
-        <div className="settingsMenuOption">
+        <div className={styles.settingsMenuOption}>
           <button>Random Color</button>
         </div>
       </div>

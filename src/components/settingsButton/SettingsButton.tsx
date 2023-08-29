@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import "./settingsButton.css";
+import styles from "./settingsButton.module.css";
 import { Settings } from "../settings/Settings";
 import { IoIosSettings } from "react-icons/io";
 
 const SettingsButton = () => {
   const [settings, openSettings] = useState(true);
+
   const setSettings = () => {
     openSettings(!settings);
   };
@@ -30,11 +31,11 @@ const SettingsButton = () => {
     };
   }, [settings]);
   return (
-    <div className="settings">
-      <div className="tool gear" onClick={setSettings}>
+    <div className={styles.settings}>
+      <div className={(styles.tool, styles.gear)} onClick={setSettings}>
         <IoIosSettings />
       </div>
-      <span className="tool-number">1</span>
+      <span className={styles["tool-number"]}>1</span>
       {settings ? <Settings /> : null}
     </div>
   );
