@@ -1,4 +1,3 @@
-import React from "react";
 import "./square.css";
 const Square = ({ color }: { color: string }) => {
   const paint = () => {

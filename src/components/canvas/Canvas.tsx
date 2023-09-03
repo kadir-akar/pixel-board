@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./canvas.css";
 import { Square } from "./square/Square";
 

@@ -23,6 +23,7 @@ const SettingsButton = () => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "1") {
         openSettings(!settings);
+        document.querySelector(".gear")?.classList.add("active-tool");
       }
     };
     window.addEventListener("keydown", handleKeyPress);
@@ -32,7 +33,7 @@ const SettingsButton = () => {
   }, [settings]);
   return (
     <div className={styles.settings}>
-      <div className={(styles.tool, styles.gear)} onClick={setSettings}>
+      <div className={`${styles.gear} tool gear`} onClick={setSettings}>
         <IoIosSettings />
       </div>
       <span className={styles["tool-number"]}>1</span>

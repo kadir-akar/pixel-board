@@ -10,6 +10,7 @@ const Context = createContext(
     color: string;
     dispatch: any;
     canvasSize: number;
+    previousColor: string | null;
   }
 );
 
@@ -17,6 +18,7 @@ const Provider = ({ children }: ContextProviderProps) => {
   const [state, dispatch] = useReducer(CanvasReducer, {
     color: "black",
     canvasSize: 32,
+    previousColor: "black",
   });
 
   const data = {

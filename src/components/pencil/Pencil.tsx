@@ -1,13 +1,15 @@
+import { Palette } from "./palette/Palette";
 import { useEffect } from "react";
 import { BiSolidPencil } from "react-icons/bi";
-import "./pencil.css";
-import { Palette } from "./palette/palette";
+
+import styles from "./pencil.module.css";
+
 import { useCanvasContext } from "../../context/CanvasContext";
 
 const Pencil = () => {
-  const { color } = useCanvasContext();
-
+  const { previousColor, dispatch } = useCanvasContext();
   const activeTool = () => {
+    dispatch({ type: "SET_COLOR", payload: previousColor });
     const pencil = document.querySelector(".pencil");
     pencil?.classList.add("active-tool");
   };
@@ -26,17 +28,18 @@ const Pencil = () => {
       }
     };
     window.addEventListener("keydown", handleKeyPress);
+
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, [togglePencil]);
   return (
-    <div>
+    <div className={styles["pencil-settings"]}>
       <div className="tool pencil">
         <BiSolidPencil onClick={togglePencil} />
       </div>
-      <span className="tool-number">2</span>
-      {/* <Palette /> */}
+      <span>2</span>
+      <Palette />
     </div>
   );
 };

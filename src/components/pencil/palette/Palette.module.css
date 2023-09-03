@@ -1,9 +1,15 @@
 .palette {
-  background-color: red;
-  width: 100%;
-  height: 100%;
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 50px;
+  position: absolute;
+}
+input[type="color"] {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
 }

@@ -1,7 +1,7 @@
 .settingsMenu {
   background-color: #ececec;
   padding: 10px 15px 15px 5px;
-  width: 180px;
+  width: 160px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -10,17 +10,16 @@
   position: absolute;
   font-size: 15px;
   font-weight: bold;
-  color: rgb(2, 3, 2);
   z-index: 1;
   text-align: left;
-  top: 50px;
+  top: 40px;
   left: 0;
   margin-left: 10px;
   border: 1px solid rgb(170, 167, 167);
 }
 .settingsMenu span {
-  border: none;
-  color: rgb(2, 3, 2);
+  color: black !important;
+  border: none !important;
 }
 .custom {
   display: flex;

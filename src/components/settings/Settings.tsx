@@ -3,6 +3,7 @@ import { useCanvasContext } from "../../context/CanvasContext";
 
 const Settings = () => {
   const { dispatch } = useCanvasContext();
+
   const changeBrushColor = (color: string) => {
     dispatch({ type: "SET_COLOR", payload: color });
   };
@@ -76,16 +77,6 @@ const Settings = () => {
             <span>solid</span>
           </div>
         </div>
-        <h3 className={styles["option-header"]}>Select Color</h3>
-        <input
-          type="color"
-          className="color-picker"
-          onBlur={(e) => {
-            if (e.target instanceof HTMLInputElement) {
-              changeBrushColor(e.target.value);
-            }
-          }}
-        />
         <div className={styles.settingsMenuOption}>
           <button onClick={clearCanvas}>Clear</button>
         </div>
