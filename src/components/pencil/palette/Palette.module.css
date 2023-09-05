@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   width: 50px;
-  position: absolute;
 }
 input[type="color"] {
   width: 40px;
