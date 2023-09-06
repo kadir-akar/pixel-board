@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { BsFillEraserFill } from "react-icons/bs";
-import { useCanvasContext } from "../../context/CanvasContext";
+import { useCanvasContext } from "../../../context/CanvasContext";
 
 const Eraser = () => {
   const { dispatch, color } = useCanvasContext();

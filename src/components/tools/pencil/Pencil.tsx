@@ -4,7 +4,7 @@ import { BiSolidPencil } from "react-icons/bi";
 
 import styles from "./pencil.module.css";
 
-import { useCanvasContext } from "../../context/CanvasContext";
+import { useCanvasContext } from "../../../context/CanvasContext";
 
 const Pencil = () => {
   const { previousColor, dispatch } = useCanvasContext();
@@ -33,6 +33,10 @@ const Pencil = () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, [togglePencil]);
+  useEffect(() => {
+    activeTool();
+  }, []);
+
   return (
     <div className={styles["pencil-settings"]}>
       <div className="tool pencil">

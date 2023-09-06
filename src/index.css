@@ -19,12 +19,14 @@ button {
 .center {
   text-align: center;
 }
+
 /* customize inputs */
 input[type="checkbox"] {
   width: 17px;
   height: 17px;
   margin-right: 3px;
 }
+
 /* tool and tools */
 .active-tool {
   color: crimson;

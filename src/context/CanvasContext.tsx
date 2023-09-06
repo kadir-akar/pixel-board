@@ -19,6 +19,7 @@ const Provider = ({ children }: ContextProviderProps) => {
     color: "black",
     canvasSize: 32,
     previousColor: "black",
+    canvasBorder: "dotted",
   });
 
   const data = {

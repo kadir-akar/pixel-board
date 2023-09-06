@@ -15,6 +15,11 @@ export default function reducer(state: any, action: any) {
         ...state,
         previousColor: action.payload,
       };
+    case "SET_CANVAS_BORDER":
+      return {
+        ...state,
+        canvasBorder: action.payload,
+      };
     default:
       return state;
   }

@@ -1,7 +1,6 @@
 import styles from "./palette.module.css";
 
-import { useCanvasContext } from "../../../context/CanvasContext";
-// import { useEffect } from "react";
+import { useCanvasContext } from "../../../../context/CanvasContext";
 
 type PaletteProps = {
   togglePencil: () => void;

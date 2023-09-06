@@ -1,17 +1,9 @@
 import styles from "./settings.module.css";
-import { useCanvasContext } from "../../context/CanvasContext";
+import { useCanvasContext } from "../../../context/CanvasContext";
 
 const Settings = () => {
   const { dispatch } = useCanvasContext();
 
-  const changeBrushColor = (color: string) => {
-    dispatch({ type: "SET_COLOR", payload: color });
-  };
-  // const canvasSize = (size: number) => {
-  //   setCanvasSize(size);
-  //   const sizeCheckBoxes = document.querySelectorAll(".size-checkbox");
-  //   sizeCheckBoxes.forEach((checkbox) => {});
-  // };
   const clearCanvas = () => {
     const canvas = document.querySelectorAll(
       ".square"
@@ -23,6 +15,15 @@ const Settings = () => {
   const changeCanvasSize = (size: number) => {
     dispatch({ type: "SET_CANVAS_SIZE", payload: size });
   };
+  const chanceCanvasBorder = (border: string) => {
+    const canvas = document.querySelectorAll(
+      ".square"
+    ) as NodeListOf<HTMLCanvasElement>;
+    canvas.forEach((canvas) => {
+      canvas.style.border = `1px ${border} #999`;
+    });
+  };
+
   return (
     <div>
       <div className={styles.settingsMenu}>
@@ -65,15 +66,30 @@ const Settings = () => {
         <div className={styles.settingsMenuOption}>
           <h3 className={styles["option-header"]}>Border settings</h3>
           <div className={styles["border-option"]}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={() => {
+                chanceCanvasBorder("none");
+              }}
+            />
             <span>none</span>
           </div>
           <div className={styles["border-option"]}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={() => {
+                chanceCanvasBorder("dotted");
+              }}
+            />
             <span>dot</span>
           </div>
           <div className={styles["border-option"]}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={() => {
+                chanceCanvasBorder("solid");
+              }}
+            />
             <span>solid</span>
           </div>
         </div>

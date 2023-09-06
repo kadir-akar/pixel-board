@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
-import styles from "./settingsButton.module.css";
-import { Settings } from "../settings/Settings";
+import { Settings } from "../Settings";
 import { IoIosSettings } from "react-icons/io";
 
 const SettingsButton = () => {
-  const [settings, openSettings] = useState(true);
+  const [settings, openSettings] = useState(false);
 
   const setSettings = () => {
     openSettings(!settings);
   };
 
   useEffect(() => {
+    const gear = document.querySelector(".gear");
+
     if (settings) {
-      const gear = document.querySelector(".gear");
       gear?.classList.add("active-tool");
     } else {
-      const gear = document.querySelector(".gear");
       gear?.classList.remove("active-tool");
     }
   }, [settings]);
@@ -23,20 +22,21 @@ const SettingsButton = () => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "1") {
         openSettings(!settings);
-        document.querySelector(".gear")?.classList.add("active-tool");
       }
     };
+
     window.addEventListener("keydown", handleKeyPress);
+
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, [settings]);
   return (
-    <div className={styles.settings}>
-      <div className={`${styles.gear} tool gear`} onClick={setSettings}>
+    <div>
+      <div className="tool gear" onClick={setSettings}>
         <IoIosSettings />
       </div>
-      <span className={styles["tool-number"]}>1</span>
+      <span className="tool-number">1</span>
       {settings ? <Settings /> : null}
     </div>
   );

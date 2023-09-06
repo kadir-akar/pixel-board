@@ -1,6 +1,6 @@
-import { SettingsButton } from "../settingsButton/SettingsButton";
-import { Pencil } from "../pencil/Pencil";
-import { Eraser } from "../eraser/Eraser";
+import { SettingsButton } from "../tools/settings/settingsButton/SettingsButton";
+import { Pencil } from "./pencil/Pencil";
+import { Eraser } from "./eraser/Eraser";
 import styles from "./tools.module.css";
 
 const Tools = () => {

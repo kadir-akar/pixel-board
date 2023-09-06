@@ -1,0 +1,11 @@
+.palette-board {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  background-color: aliceblue;
+}
+.add-palette {
+  font-size: 30px;
+  cursor: pointer;
+}
