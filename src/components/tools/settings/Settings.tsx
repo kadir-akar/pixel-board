@@ -1,29 +1,40 @@
 import styles from "./settings.module.css";
 import { useCanvasContext } from "../../../context/CanvasContext";
-
 const Settings = () => {
   const { dispatch } = useCanvasContext();
-
+  const canvas = document.querySelectorAll(
+    ".square"
+  ) as NodeListOf<HTMLCanvasElement>;
   const clearCanvas = () => {
-    const canvas = document.querySelectorAll(
-      ".square"
-    ) as NodeListOf<HTMLCanvasElement>;
     canvas.forEach((canvas) => {
       canvas.style.backgroundColor = "#dad7d7";
+    });
+  };
+
+  const chanceCanvasBorder = (border: string) => {
+    canvas.forEach((canvas) => {
+      canvas.style.border = `1px ${border} #999`;
     });
   };
   const changeCanvasSize = (size: number) => {
     dispatch({ type: "SET_CANVAS_SIZE", payload: size });
   };
-  const chanceCanvasBorder = (border: string) => {
-    const canvas = document.querySelectorAll(
-      ".square"
-    ) as NodeListOf<HTMLCanvasElement>;
-    canvas.forEach((canvas) => {
-      canvas.style.border = `1px ${border} #999`;
-    });
-  };
 
+  const canvasSizes = document.querySelectorAll(
+    ".canvas-size"
+  ) as NodeListOf<HTMLInputElement>;
+  canvasSizes.forEach((size) => {
+    size.addEventListener("click", () => {
+      if (!size.checked) {
+        size.checked = true;
+      }
+      canvasSizes.forEach((otherSize) => {
+        if (otherSize !== size) {
+          otherSize.checked = false;
+        }
+      });
+    });
+  });
   return (
     <div>
       <div className={styles.settingsMenu}>
@@ -32,7 +43,7 @@ const Settings = () => {
             <h3 className={styles["option-header"]}>Canvas Size</h3>
             <input
               type="checkbox"
-              className={styles["size-checkbox"]}
+              className={`canvas-size styles["size-checkbox"]`}
               id="16"
               onChange={() => {
                 changeCanvasSize(16);
@@ -43,7 +54,7 @@ const Settings = () => {
           <div>
             <input
               type="checkbox"
-              className={styles["size-checkbox"]}
+              className={`canvas-size styles["size-checkbox"]`}
               id="32"
               onChange={() => {
                 changeCanvasSize(32);
@@ -54,7 +65,7 @@ const Settings = () => {
           <div>
             <input
               type="checkbox"
-              className={styles["size-checkbox"]}
+              className={`canvas-size styles["size-checkbox"]`}
               id="64"
               onChange={() => {
                 changeCanvasSize(64);
@@ -67,6 +78,7 @@ const Settings = () => {
           <h3 className={styles["option-header"]}>Border settings</h3>
           <div className={styles["border-option"]}>
             <input
+              className="border-option"
               type="checkbox"
               onChange={() => {
                 chanceCanvasBorder("none");
@@ -76,6 +88,7 @@ const Settings = () => {
           </div>
           <div className={styles["border-option"]}>
             <input
+              className="border-option"
               type="checkbox"
               onChange={() => {
                 chanceCanvasBorder("dotted");
@@ -85,6 +98,7 @@ const Settings = () => {
           </div>
           <div className={styles["border-option"]}>
             <input
+              className="border-option"
               type="checkbox"
               onChange={() => {
                 chanceCanvasBorder("solid");
