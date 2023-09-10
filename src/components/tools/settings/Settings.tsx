@@ -6,20 +6,17 @@ const Settings = () => {
     ".square"
   ) as NodeListOf<HTMLCanvasElement>;
   const clearCanvas = () => {
-    canvas.forEach((canvas) => {
-      canvas.style.backgroundColor = "#dad7d7";
-    });
+    //confirm then clear
+    if (window.confirm("Are you sure you want to clear the canvas?")) {
+      canvas.forEach((canvas) => {
+        canvas.style.backgroundColor = "#dad7d7";
+      });
+    }
   };
 
-  const chanceCanvasBorder = (border: string) => {
-    canvas.forEach((canvas) => {
-      canvas.style.border = `1px ${border} #999`;
-    });
-  };
   const changeCanvasSize = (size: number) => {
     dispatch({ type: "SET_CANVAS_SIZE", payload: size });
   };
-
   const canvasSizes = document.querySelectorAll(
     ".canvas-size"
   ) as NodeListOf<HTMLInputElement>;
@@ -74,44 +71,9 @@ const Settings = () => {
             <span>64x64</span>
           </div>
         </form>
-        <div className={styles.settingsMenuOption}>
-          <h3 className={styles["option-header"]}>Border settings</h3>
-          <div className={styles["border-option"]}>
-            <input
-              className="border-option"
-              type="checkbox"
-              onChange={() => {
-                chanceCanvasBorder("none");
-              }}
-            />
-            <span>none</span>
-          </div>
-          <div className={styles["border-option"]}>
-            <input
-              className="border-option"
-              type="checkbox"
-              onChange={() => {
-                chanceCanvasBorder("dotted");
-              }}
-            />
-            <span>dot</span>
-          </div>
-          <div className={styles["border-option"]}>
-            <input
-              className="border-option"
-              type="checkbox"
-              onChange={() => {
-                chanceCanvasBorder("solid");
-              }}
-            />
-            <span>solid</span>
-          </div>
-        </div>
+
         <div className={styles.settingsMenuOption}>
           <button onClick={clearCanvas}>Clear</button>
-        </div>
-        <div className={styles.settingsMenuOption}>
-          <button>Random Color</button>
         </div>
       </div>
     </div>
