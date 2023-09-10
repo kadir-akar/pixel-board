@@ -1,27 +1,23 @@
-# React + TypeScript + Vite
+# Pixel board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🎨 You can create your palette and draw by choosing the colors you want.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+| 🐟 set your canvas pize                                                                      |🐟 set your palette                                                                      |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| ![Ekran görüntüsü 2023-09-10 175652](https://github.com/kadir-akar/pixel-board/assets/73611059/1762e177-1e5e-4e43-922a-852955f32d48)| ![Ekran görüntüsü 2023-09-10 175535](https://github.com/kadir-akar/pixel-board/assets/73611059/9283d39d-cc68-4d03-9f13-c9c6cbc66fba)|
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Upcoming Feature
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- export and import your art
+- art book
+- level system
+
+## Kurulum
+1. clone this repo
+2. `npm install`
+3. starting the app: `npm start`
