@@ -17,7 +17,6 @@
 - Art book
 - Level system
 
-## Kurulum
-1. Clone this repo
-2. `npm install`
-3. Starting the app: `npm start`
+## Contributing
+
+Fork this repository. Create a new branch for your changes. Make your changes and commit them with a descriptive commit message. Push your changes to your forked repository. Open a pull request to merge your changes into the main repository.
