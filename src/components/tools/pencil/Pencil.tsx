@@ -43,12 +43,7 @@ const Pencil = () => {
         <BiSolidPencil onClick={togglePencil} />
       </div>
       <span>2</span>
-      <div className={styles["palette-board"]}>
-        <Palette togglePencil={togglePencil} />
-        <Palette togglePencil={togglePencil} />
-        <Palette togglePencil={togglePencil} />
-        <Palette togglePencil={togglePencil} />
-      </div>
+      <div className={styles["palette-board"]}></div>
     </div>
   );
 };

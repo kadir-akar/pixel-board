@@ -68,7 +68,7 @@ const Settings = () => {
                 changeCanvasSize(64);
               }}
             />
-            <span>64x64</span>
+            <span>36x64</span>
           </div>
         </form>
 

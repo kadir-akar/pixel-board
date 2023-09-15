@@ -2,11 +2,7 @@ import styles from "./palette.module.css";
 
 import { useCanvasContext } from "../../../../context/CanvasContext";
 
-type PaletteProps = {
-  togglePencil: () => void;
-};
-
-const Palette = ({ togglePencil }: PaletteProps) => {
+const Palette = () => {
   const { dispatch } = useCanvasContext();
 
   const changeBrushColor = (color: string) => {
@@ -19,9 +15,6 @@ const Palette = ({ togglePencil }: PaletteProps) => {
         <input
           type="color"
           className={styles["color-picker"]}
-          onClick={() => {
-            togglePencil();
-          }}
           onBlur={(e) => {
             if (e.target instanceof HTMLInputElement) {
               changeBrushColor(e.target.value);

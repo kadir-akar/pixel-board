@@ -1,6 +1,6 @@
 .palette-board {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: absolute;
   align-items: center;
   background-color: aliceblue;
