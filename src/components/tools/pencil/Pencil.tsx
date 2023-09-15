@@ -1,4 +1,3 @@
-import { Palette } from "./palette/Palette";
 import { useEffect } from "react";
 import { BiSolidPencil } from "react-icons/bi";
 
@@ -43,7 +42,6 @@ const Pencil = () => {
         <BiSolidPencil onClick={togglePencil} />
       </div>
       <span>2</span>
-      <div className={styles["palette-board"]}></div>
     </div>
   );
 };
