@@ -1,27 +1,22 @@
-# React + TypeScript + Vite
+# Pixel board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🎨 You can create your palette and draw by choosing the colors you want.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+| 🐟 Set your canvas size                                                                      |🐟 Set your palette                                                                      |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| ![Ekran görüntüsü 2023-09-10 175616](https://github.com/kadir-akar/pixel-board/assets/73611059/f1241473-e0aa-4f40-8c41-256dfa47cf2b)| ![Ekran görüntüsü 2023-09-10 175535](https://github.com/kadir-akar/pixel-board/assets/73611059/d81fce4e-65a9-4f56-8fe6-3c0b42f8e39b)|
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Upcoming Feature
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Export and import your art
+- Art book
+- Level system
+
+## Contributing
+
+Fork this repository. Create a new branch for your changes. Make your changes and commit them with a descriptive commit message. Push your changes to your forked repository. Open a pull request to merge your changes into the main repository.
