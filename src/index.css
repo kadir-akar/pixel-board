@@ -25,12 +25,12 @@ input[type="checkbox"] {
   width: 17px;
   height: 17px;
   margin-right: 3px;
+  border-radius: 15px;
 }
 
 /* tool and tools */
 .active-tool {
-  color: crimson;
-  background-color: #1f1f1f;
+  background-color: #302f2f;
 }
 .tool {
   justify-content: center;
@@ -43,5 +43,8 @@ input[type="checkbox"] {
   width: 50px;
   height: 50px;
   cursor: pointer;
-  border-bottom: 1px solid rgb(31, 31, 31);
+  color: #777676;
+  border-radius: 5px;
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
 }

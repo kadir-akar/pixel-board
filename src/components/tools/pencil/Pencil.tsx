@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { BiSolidPencil } from "react-icons/bi";
 
-import styles from "./pencil.module.css";
-
 import { useCanvasContext } from "../../../context/CanvasContext";
 
 const Pencil = () => {
@@ -37,7 +35,7 @@ const Pencil = () => {
   }, []);
 
   return (
-    <div className={styles["pencil-settings"]}>
+    <div>
       <div className="tool pencil">
         <BiSolidPencil onClick={togglePencil} />
       </div>
