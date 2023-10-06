@@ -8,13 +8,13 @@ const Canvas = () => {
 
   return (
     <div>
+      <div className="palette-board">
+        <Palette />
+        <Palette />
+        <Palette />
+        <Palette />
+      </div>
       <div>
-        <div className="palette-board">
-          <Palette />
-          <Palette />
-          <Palette />
-          <Palette />
-        </div>
         <div className="canvas">
           {Array(canvasSize)
             .fill(0)

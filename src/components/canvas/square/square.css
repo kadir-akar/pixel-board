@@ -11,3 +11,15 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+@media (max-width: 800px) {
+  .square {
+    height: 18px;
+    width: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .square {
+    height: 15px;
+    width: 15px;
+  }
+}

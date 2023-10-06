@@ -15,3 +15,16 @@
   color: gray;
   font-size: 15px;
 }
+@media (max-width: 800px) {
+  .tools {
+    position: relative;
+    right: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 15px;
+  }
+}
