@@ -14,4 +14,5 @@ input[type="color"] {
   border: none;
   background-color: rgb(231, 227, 227);
   border-radius: 15px;
+  margin: 5px;
 }
