@@ -23,7 +23,7 @@ Clone this repository to your local machine. Navigate to the project directory i
 
 ## Usage
 
-In the project directory, run npm start to start the application. Navigate to [http://localhost:5174](http://localhost:5174/) in your web browser.
+In the project directory, ```npm run dev``` to start the application. Navigate to [http://localhost:5174](http://localhost:5174/) in your web browser.
 
 ## Contributing
 
