@@ -17,6 +17,15 @@
 - Art book
 - Level system
 
+## Installation
+
+Clone this repository to your local machine. Navigate to the project directory in your terminal. Run ``npm install`` to install the necessary dependencies.
+
+## Usage
+
+In the project directory, run npm start to start the application. Navigate to [http://localhost:5174](http://localhost:5174/) in your web browser.
+
 ## Contributing
 
-Fork this repository. Create a new branch for your changes. Make your changes and commit them with a descriptive commit message. Push your changes to your forked repository. Open a pull request to merge your changes into the main repository.
+If there is an error or problem, first report the problem in the issue section.  
+If you want to contribute about upcoming feature Fork this repository. Create a new branch for your changes. Make your changes and commit them with a descriptive commit message. Push your changes to your forked repository. Open a pull request to merge your changes into the main repository.
