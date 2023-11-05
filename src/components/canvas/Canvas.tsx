@@ -2,16 +2,17 @@ import "./canvas.css";
 import { Square } from "./square/Square";
 import { Palette } from "../tools/pencil/palette/Palette";
 import { useCanvasContext } from "../../context/CanvasContext";
+import AvailablePalette from "../tools/pencil/availablepalette/AvailablePalette";
 
 const Canvas = () => {
-  const { canvasSize, color } = useCanvasContext();
+  const { availableColors, canvasSize, color } = useCanvasContext();
 
   return (
     <div>
       <div className="palette-board">
-        <Palette />
-        <Palette />
-        <Palette />
+        {availableColors.map((color) => {
+          return <AvailablePalette key={color} color={color} />;
+        })}
         <Palette />
       </div>
       <div>

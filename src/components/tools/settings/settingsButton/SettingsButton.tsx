@@ -24,7 +24,6 @@ const SettingsButton = () => {
         openSettings(!settings);
       }
     };
-
     window.addEventListener("keydown", handleKeyPress);
 
     return () => {

@@ -1,29 +1,33 @@
 import styles from "./palette.module.css";
-
 import { useCanvasContext } from "../../../../context/CanvasContext";
+
+import { useState } from "react";
 
 const Palette = () => {
   const { dispatch } = useCanvasContext();
+  const [selectedColor, setSelectedColor] = useState(""); // Seçilen rengi saklamak için bir state
 
-  const changeBrushColor = (color: string) => {
-    dispatch({ type: "SET_COLOR", payload: color });
-    dispatch({ type: "SET_PREVIOUS_COLOR", payload: color });
+  const handleColorChange = (e: any) => {
+    setSelectedColor(e.target.value);
   };
+
+  const handleApplyColor = () => {
+    if (selectedColor) {
+      dispatch({ type: "SET_AVAILABLE_COLORS", payload: selectedColor });
+      setSelectedColor("");
+    }
+  };
+
   return (
     <div className={styles.palette}>
-      <form>
-        <input
-          type="color"
-          className={styles["color-picker"]}
-          onBlur={(e) => {
-            if (e.target instanceof HTMLInputElement) {
-              changeBrushColor(e.target.value);
-            }
-          }}
-        />
-      </form>
+      <input type="color" onChange={handleColorChange} />
+      <button className={styles["save-button"]} onClick={handleApplyColor}>
+        save
+      </button>
     </div>
   );
 };
+
+export default Palette;
 
 export { Palette };

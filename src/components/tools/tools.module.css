@@ -9,7 +9,6 @@
   align-items: center;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
   border-bottom-right-radius: 15px;
-  color: rgb(221, 71, 44);
 }
 .tools span {
   color: gray;
@@ -18,13 +17,12 @@
 @media (max-width: 800px) {
   .tools {
     position: relative;
-    right: 0;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 40%;
     margin: 0 auto;
     margin-bottom: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
   }
 }

@@ -11,6 +11,8 @@ const Context = createContext(
     dispatch: any;
     canvasSize: number;
     previousColor: string | null;
+    canvasBorder: string;
+    availableColors: string[];
   }
 );
 
@@ -20,6 +22,7 @@ const Provider = ({ children }: ContextProviderProps) => {
     canvasSize: 32,
     previousColor: "black",
     canvasBorder: "dotted",
+    availableColors: ["#4464AD", "#A4B0F5", "#F58F29", "#7D4600", "#F5E6B0"],
   });
 
   const data = {

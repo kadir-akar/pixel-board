@@ -12,18 +12,17 @@
   overflow: hidden;
 }
 .palette-board {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   position: absolute;
   right: 0;
+  top: 0;
 }
 @media (max-width: 800px) {
   .palette-board {
-    position: relative;
-    right: 0;
+    bottom: 0;
+    top: unset;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+    grid-template-columns: repeat(5, 1fr);
   }
 }
