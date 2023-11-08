@@ -1,15 +1,22 @@
-import { SettingsButton } from "../tools/settings/settingsButton/SettingsButton";
 import { Pencil } from "./pencil/Pencil";
 import { Eraser } from "./eraser/Eraser";
-import styles from "./tools.module.css";
+import { CanvasSize } from "./settings/CanvasSize";
+import { ClearCanvas } from "./settings/ClearCanvas";
+
+import "./tools.css";
 
 const Tools = () => {
   return (
     <div>
-      <div className={styles.tools}>
-        <SettingsButton />
-        <Pencil />
-        <Eraser />
+      <div className="tools">
+        <div className="pencil-eraser">
+          <Pencil />
+          <Eraser />
+        </div>
+        <CanvasSize />
+        <div>
+          <ClearCanvas />
+        </div>
       </div>
     </div>
   );

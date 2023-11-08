@@ -1,6 +1,4 @@
 .square {
-  /* height: 35px;
-  width: 35px; */
   height: 25px;
   width: 25px;
   background-color: #dad7d7;
@@ -13,8 +11,8 @@
 }
 @media screen and (max-width: 1000px) {
   .square {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
   }
 }
 @media (max-width: 800px) {

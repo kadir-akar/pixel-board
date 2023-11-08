@@ -8,7 +8,7 @@ export default function reducer(state: any, action: any) {
     case "SET_CANVAS_SIZE":
       return {
         ...state,
-        canvasSize: action.payload,
+        canvasSize: [action.payload[0], action.payload[1]],
       };
     case "SET_PREVIOUS_COLOR":
       return {

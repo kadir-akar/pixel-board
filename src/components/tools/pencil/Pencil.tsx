@@ -1,22 +1,15 @@
 import { useEffect } from "react";
 import { BiSolidPencil } from "react-icons/bi";
-
 import { useCanvasContext } from "../../../context/CanvasContext";
+
+import { activatePencil, deActivateEraser } from "../../../utils/activeTool";
 
 const Pencil = () => {
   const { previousColor, dispatch } = useCanvasContext();
-  const activeTool = () => {
-    dispatch({ type: "SET_COLOR", payload: previousColor });
-    const pencil = document.querySelector(".pencil");
-    pencil?.classList.add("active-tool");
-  };
-  const removeActiveTool = () => {
-    const eraser = document.querySelector(".eraser");
-    eraser?.classList.remove("active-tool");
-  };
   const togglePencil = () => {
-    activeTool();
-    removeActiveTool();
+    dispatch({ type: "SET_COLOR", payload: previousColor });
+    activatePencil();
+    deActivateEraser();
   };
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -31,14 +24,12 @@ const Pencil = () => {
     };
   }, [togglePencil]);
   useEffect(() => {
-    activeTool();
+    activatePencil();
   }, []);
 
   return (
-    <div>
-      <div className="tool pencil">
-        <BiSolidPencil onClick={togglePencil} />
-      </div>
+    <div className="tool pencil" onClick={togglePencil}>
+      <BiSolidPencil onClick={togglePencil} />
       <span>2</span>
     </div>
   );

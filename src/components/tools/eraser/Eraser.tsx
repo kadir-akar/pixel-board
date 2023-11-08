@@ -31,10 +31,8 @@ const Eraser = () => {
     };
   }, [toggleEraser]);
   return (
-    <div>
-      <div className="tool eraser" onClick={toggleEraser}>
-        <BsFillEraserFill />
-      </div>
+    <div className="tool eraser" onClick={toggleEraser}>
+      <BsFillEraserFill />
       <span className="tool-number">3</span>
     </div>
   );

@@ -17,12 +17,12 @@ const Canvas = () => {
       </div>
       <div>
         <div className="canvas">
-          {Array(canvasSize)
+          {Array(canvasSize[0])
             .fill(0)
             .map((_, i) => {
               return (
                 <div className="row" key={i}>
-                  {Array(canvasSize)
+                  {Array(canvasSize[1])
                     .fill(0)
                     .map((_, j) => {
                       return <Square color={color} key={j} />;

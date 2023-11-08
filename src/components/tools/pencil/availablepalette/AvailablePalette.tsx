@@ -1,16 +1,17 @@
 import "./availablepalette.css";
 import { useCanvasContext } from "../../../../context/CanvasContext";
-
+import { activatePencil, deActivateEraser } from "../../../../utils/activeTool";
 interface Props {
   color: string;
 }
 
 const AvailablePalette = ({ color }: Props) => {
   const { dispatch } = useCanvasContext();
-
   const changeBrushColor = (color: string) => {
     dispatch({ type: "SET_COLOR", payload: color });
     dispatch({ type: "SET_PREVIOUS_COLOR", payload: color });
+    activatePencil();
+    deActivateEraser();
   };
   const handleDeleteColor = (color: string) => {
     dispatch({ type: "REMOVE_AVAILABLE_COLOR", payload: color });
