@@ -5,11 +5,13 @@
 ## Key Features
 
 
-| 🐟 Set your canvas size                                                                      |🐟 Set your palette                                                                      |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| ![Ekran görüntüsü 2023-09-10 175616](https://github.com/kadir-akar/pixel-board/assets/73611059/f1241473-e0aa-4f40-8c41-256dfa47cf2b)| ![Ekran görüntüsü 2023-09-10 175535](https://github.com/kadir-akar/pixel-board/assets/73611059/d81fce4e-65a9-4f56-8fe6-3c0b42f8e39b)|
+| 🐟 customize your canvas board                                                                    |🐟 Set your palette                                                                      |
+| -----------------------------------------------------------------------------------| -------------------------------------------------------------------------------------|
+|![Screenshot 2023-11-09 at 13-26-50 pixel-board](https://github.com/kadir-akar/pixel-board/assets/73611059/0e5abf45-e297-4a4d-9273-e040e9f45821)| ![Ekran görüntüsü 2023-11-09 132411](https://github.com/kadir-akar/pixel-board/assets/73611059/66b89304-574e-48dd-875f-c7da0a7c1765)|
 
+🐟 And draw
 
+![Ekran görüntüsü 2023-11-09 132928](https://github.com/kadir-akar/pixel-board/assets/73611059/a60729e2-0db0-4132-a203-ae67f2d57ba3)
 
 ## Upcoming Feature
 
