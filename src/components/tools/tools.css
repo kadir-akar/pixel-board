@@ -44,6 +44,10 @@
   flex-direction: column;
   gap: 3px;
 }
+.clear-button {
+  margin: 10px;
+}
+
 .adj-buttons {
   display: flex;
   flex-direction: row;

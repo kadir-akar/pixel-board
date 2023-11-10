@@ -1,4 +1,3 @@
-import "./clearCanvas.css";
 const ClearCanvas = () => {
   const canvas = document.querySelectorAll(
     ".square"
