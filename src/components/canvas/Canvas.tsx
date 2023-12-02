@@ -32,6 +32,15 @@ const Canvas = () => {
             })}
         </div>
       </div>
+      <div>
+        <span
+          className="
+           tooltip
+          "
+        >
+          You can paint multiple squares by holding down the control key.
+        </span>
+      </div>
     </div>
   );
 };
